@@ -1,0 +1,27 @@
+@startuml
+title Diagrama de Componentes - Carrito de Compras
+
+package "Frontend" {
+  [Interfaz Web] 
+}
+
+package "Backend" {
+  [Servicio Carrito]
+  [Servicio Pedido]
+  [Servicio Pago]
+}
+
+package "Base de Datos" {
+  [DB Productos]
+  [DB Clientes]
+  [DB Pedidos]
+}
+
+[Interfaz Web] --> [Servicio Carrito]
+[Servicio Carrito] --> [DB Productos]
+[Servicio Carrito] --> [DB Clientes]
+[Servicio Pedido] --> [Servicio Carrito]
+[Servicio Pedido] --> [DB Pedidos]
+[Servicio Pago] --> [Servicio Pedido]
+
+@enduml
