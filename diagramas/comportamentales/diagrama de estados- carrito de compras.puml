@@ -1,0 +1,12 @@
+@startuml
+title Estados - Carrito de Compras
+
+[*] --> Vacío
+
+Vacío --> Activo : agregarProducto
+Activo --> Activo : agregarProducto / eliminarProducto
+Activo --> PedidoGenerado : confirmarPedido
+PedidoGenerado --> Pagado : procesarPago
+Pagado --> [*]
+
+@enduml
