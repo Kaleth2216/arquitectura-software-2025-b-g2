@@ -1,0 +1,47 @@
+@startuml
+title Diagrama de Clases - Carrito de Compras
+
+class Cliente {
+  -id: int
+  -nombre: String
+  -email: String
+  +registrar()
+  +iniciarSesion()
+}
+
+class Carrito {
+  -id: int
+  -fechaCreacion: Date
+  +agregarProducto()
+  +eliminarProducto()
+  +calcularTotal()
+}
+
+class Producto {
+  -id: int
+  -nombre: String
+  -precio: double
+  -stock: int
+  +actualizarStock()
+}
+
+class Pedido {
+  -id: int
+  -estado: String
+  +generarPedido()
+  +cancelarPedido()
+}
+
+class Pago {
+  -id: int
+  -monto: double
+  -metodo: String
+  +procesarPago()
+}
+
+Cliente "1" -- "1" Carrito
+Carrito "1" -- "*" Producto
+Cliente "1" -- "*" Pedido
+Pedido "1" -- "1" Pago
+
+@enduml
