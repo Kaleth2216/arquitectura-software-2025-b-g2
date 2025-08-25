@@ -1,0 +1,15 @@
+@startuml
+title Secuencia - Compra en Carrito
+
+actor Cliente
+Cliente -> Carrito : agregarProducto(producto)
+Carrito -> Producto : verificarStock()
+Producto --> Carrito : disponible
+
+Cliente -> Carrito : confirmarPedido()
+Carrito -> Pedido : generarPedido()
+Pedido -> Pago : procesarPago()
+Pago --> Pedido : pagoConfirmado
+Pedido --> Cliente : pedidoConfirmado
+
+@enduml
