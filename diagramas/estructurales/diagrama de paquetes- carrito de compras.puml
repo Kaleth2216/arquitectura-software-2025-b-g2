@@ -1,0 +1,24 @@
+@startuml
+title Diagrama de Paquetes - Carrito de Compras
+
+package "Usuarios" {
+  class Cliente
+  class Administrador
+}
+
+package "Ventas" {
+  class Carrito
+  class Pedido
+  class Pago
+}
+
+package "Inventario" {
+  class Producto
+  class Categoria
+}
+
+Cliente --> Carrito
+Carrito --> Producto
+Pedido --> Pago
+
+@enduml
