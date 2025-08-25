@@ -1,0 +1,20 @@
+@startuml
+title Actividades - Proceso de Compra
+
+start
+:Cliente navega productos;
+:Selecciona producto;
+:Agrega al carrito;
+
+if (¿Seguir comprando?) then (sí)
+  :Volver a catálogo;
+  -> Selección;
+else (no)
+  :Visualizar carrito;
+  :Confirmar pedido;
+  :Seleccionar método de pago;
+  :Procesar pago;
+endif
+
+stop
+@enduml
