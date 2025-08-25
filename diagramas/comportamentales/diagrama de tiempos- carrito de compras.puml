@@ -1,0 +1,29 @@
+@startuml
+title Tiempos - Compra en Carrito
+
+concise Cliente
+concise Carrito
+concise Pedido
+concise Pago
+
+Cliente is idle
+Carrito is idle
+Pedido is idle
+Pago is idle
+
+@0
+Cliente is Navegando
+@1
+Carrito is AgregandoProducto
+@2
+Cliente is ConfirmandoPedido
+Carrito is GenerandoPedido
+@3
+Pedido is Creado
+Pago is Procesando
+@4
+Pago is Confirmado
+Pedido is Finalizado
+Cliente is PedidoCompletado
+
+@enduml
