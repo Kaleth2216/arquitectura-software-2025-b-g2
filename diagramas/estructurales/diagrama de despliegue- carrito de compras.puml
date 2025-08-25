@@ -1,0 +1,19 @@
+@startuml
+title Diagrama de Despliegue - Carrito de Compras
+
+node "Cliente (Navegador)" {
+  component "Interfaz Web"
+}
+
+node "Servidor Web" {
+  component "Aplicación Web"
+}
+
+node "Servidor de BD" {
+  database "Base de Datos"
+}
+
+"Cliente (Navegador)" --> "Servidor Web"
+"Servidor Web" --> "Servidor de BD"
+
+@enduml
