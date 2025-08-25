@@ -1,0 +1,32 @@
+@startuml
+title Diagrama de Objetos - Carrito de Compras
+
+object cliente1 {
+  nombre = "Juan Pérez"
+  email = "juan@email.com"
+}
+
+object carrito1 {
+  fechaCreacion = "20/08/2025"
+}
+
+object producto1 {
+  nombre = "Laptop"
+  precio = 3500.0
+}
+
+object pedido1 {
+  estado = "Pendiente"
+}
+
+object pago1 {
+  metodo = "Tarjeta"
+  monto = 3500.0
+}
+
+cliente1 --> carrito1
+carrito1 --> producto1
+cliente1 --> pedido1
+pedido1 --> pago1
+
+@enduml
