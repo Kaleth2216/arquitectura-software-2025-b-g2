@@ -1,0 +1,14 @@
+@startuml
+title Comunicación - Flujo de Compra
+
+actor Cliente
+
+Cliente -> Carrito : (1) agregarProducto()
+Carrito -> Producto : (2) verificarStock()
+Cliente -> Carrito : (3) confirmarPedido()
+Carrito -> Pedido : (4) generarPedido()
+Pedido -> Pago : (5) procesarPago()
+Pago -> Pedido : (6) confirmarPago()
+Pedido -> Cliente : (7) pedidoConfirmado
+
+@enduml
